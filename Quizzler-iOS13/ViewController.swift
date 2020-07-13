@@ -17,9 +17,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var trueButton: UIButton!
     
     let quiz = [
-            "abc",
-            "bh",
-            "hhu"]
+            "Four plus two eqauls six",
+            "Trump is the Prime Minister of USA",
+            "Vancouver is in India"]
     var questionNum = 0
     
     override func viewDidLoad() {
