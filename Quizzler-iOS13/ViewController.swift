@@ -19,8 +19,7 @@ class ViewController: UIViewController {
     let quiz = [
             "abc",
             "bh",
-            "hhu"
-        ]
+            "hhu"]
     var questionNum = 0
     
     override func viewDidLoad() {
