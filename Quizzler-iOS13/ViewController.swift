@@ -17,23 +17,36 @@ class ViewController: UIViewController {
     @IBOutlet weak var trueButton: UIButton!
     
     let quiz = [
-            "Four plus two eqauls six",
-            "Trump is the Prime Minister of USA",
-            "Vancouver is in India"]
+            ["Four plus two equals six", "True"] ,
+            ["Trump is the Prime Minister of USA", "False"] ,
+            ["Vancouver is in India", "False"]]
     var questionNum = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         updateUI()
     }
 
     @IBAction func answerButtonPressed(_ sender: UIButton) {
-        questionNum += 1
+        let userAnswer = sender.currentTitle
+        let actualAnswer = quiz[questionNum][1]
+        
+        if userAnswer == actualAnswer {
+            print("Right!")
+        } else {
+            print("Wrong!")
+        }
+        if questionNum < quiz.count-1 {
+            questionNum += 1
+        } else {
+            questionNum = 0
+        }
         updateUI()
     }
     
     func updateUI() {
-        questionLabel.text = quiz[questionNum]
+        questionLabel.text = quiz[questionNum][0]
     }
     
 }
